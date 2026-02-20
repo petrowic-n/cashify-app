@@ -9,7 +9,9 @@
   </head>
   <body class="bg-white-50 text-muted min-h-screen">
     <!-- header -->
-    <header class="fixed w-full top-0 left-0 right-0 py-space-base bg-white-100 shadow-shadow-s">
+    <header
+      class="fixed w-full top-0 left-0 right-0 py-space-base bg-white-100 shadow-shadow-s z-20"
+    >
       <div class="container">
         <!-- logo -->
         <div class="flex items-center justify-center gap-1.5">
@@ -30,10 +32,10 @@
     </header>
 
     <!-- hero section -->
-    <section id="hero-section" class="pt-52">
+    <section id="hero-section" class="pt-52 hidden">
       <div class="container flex flex-col items-center justify-center">
         <h1 class="md:text-6xl text-5xl text-black-100 font-bold text-center">
-          Take control of <br>
+          Take control of <br />
           <span class="text-green">your money.</span>
         </h1>
         <p class="mt-space-base text-black-200">
@@ -42,83 +44,100 @@
         <p>Start your journey today.</p>
         <div class="flex flex-col items-center form-create-acc">
           <input
-          id="input-create-acc"
+            id="input-create-acc"
             class="w-full max-w-75 border border-green p-space-s rounded-2xl outline-green text-green text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none mt-space-2xl shadow-shadow-s"
             name="card"
             type="text"
             placeholder="enter your name"
             required
           />
-          <button id="create-acc-btn" class="secondary-btn mt-space-2xl shadow-shadow-s">Create account</button>
+          <button
+            id="create-acc-btn"
+            class="secondary-btn mt-space-2xl shadow-shadow-s"
+          >
+            Create account
+          </button>
         </div>
       </div>
     </section>
 
     <!-- App -->
-    <div id="app" class="container hidden pt-52 pb-10">
-      <h2 class="text-black-100 font-bold text-2xl">Welcome <span id="user-name" class="text-blue font-semibold"></span></h2>
-      <div class="grid md:grid-cols-2 grid-cols-1 gap-space-base mt-space-2xl">
+    <div id="app" class="container pt-52 pb-10">
+      <h2 class="text-black-100 font-bold text-4xl">
+        Welcome <span id="user-name" class="text-blue font-semibold"></span>
+      </h2>
+      <!-- Create budget -->
+      <div
+        id="create-budget-container"
+        class="grid md:grid-cols-2 grid-cols-1 gap-space-base mt-space-2xl"
+      >
         <!-- Budget column -->
         <div
-          class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l"
+          class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l flex flex-col items-baseline"
         >
           <h2 class="text-black-100 font-bold text-2xl">Create Budget</h2>
 
           <!-- Budget -->
-          <div
-            class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="fill-blue"
-              fill="currentColor"
-              width="32"
+          <div class="mb-space-2xl w-full">
+            <div
+              class="w-full flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
             >
-              <path
-                d="M3.00488 2.99979H21.0049C21.5572 2.99979 22.0049 3.4475 22.0049 3.99979V19.9998C22.0049 20.5521 21.5572 20.9998 21.0049 20.9998H3.00488C2.4526 20.9998 2.00488 20.5521 2.00488 19.9998V3.99979C2.00488 3.4475 2.4526 2.99979 3.00488 2.99979ZM20.0049 10.9998H4.00488V18.9998H20.0049V10.9998ZM20.0049 8.99979V4.99979H4.00488V8.99979H20.0049ZM14.0049 14.9998H18.0049V16.9998H14.0049V14.9998Z"
-              ></path>
-            </svg>
-            <div class="w-full">
-              <label for="budget" class="font-semibold">Budget name</label>
-              <input
-                class="w-full outline-0 text-blue text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                name="budget"
-                type="text"
-                placeholder="e.g, Groceries"
-                required
-              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="fill-blue"
+                fill="currentColor"
+                width="32"
+              >
+                <path
+                  d="M3.00488 2.99979H21.0049C21.5572 2.99979 22.0049 3.4475 22.0049 3.99979V19.9998C22.0049 20.5521 21.5572 20.9998 21.0049 20.9998H3.00488C2.4526 20.9998 2.00488 20.5521 2.00488 19.9998V3.99979C2.00488 3.4475 2.4526 2.99979 3.00488 2.99979ZM20.0049 10.9998H4.00488V18.9998H20.0049V10.9998ZM20.0049 8.99979V4.99979H4.00488V8.99979H20.0049ZM14.0049 14.9998H18.0049V16.9998H14.0049V14.9998Z"
+                ></path>
+              </svg>
+              <div class="w-full">
+                <label for="budget" class="font-semibold">Budget name</label>
+                <input
+                  id="budget-text-input"
+                  class="w-full outline-0 text-blue text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  name="budget"
+                  type="text"
+                  placeholder="e.g, Groceries"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Amount -->
+            <div
+              class="w-full flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="fill-green"
+                fill="currentColor"
+                width="32"
+              >
+                <path
+                  d="M18.0049 6.99979H21.0049C21.5572 6.99979 22.0049 7.4475 22.0049 7.99979V19.9998C22.0049 20.5521 21.5572 20.9998 21.0049 20.9998H3.00488C2.4526 20.9998 2.00488 20.5521 2.00488 19.9998V3.99979C2.00488 3.4475 2.4526 2.99979 3.00488 2.99979H18.0049V6.99979ZM4.00488 8.99979V18.9998H20.0049V8.99979H4.00488ZM4.00488 4.99979V6.99979H16.0049V4.99979H4.00488ZM15.0049 12.9998H18.0049V14.9998H15.0049V12.9998Z"
+                ></path>
+              </svg>
+              <div class="w-full">
+                <label for="cash" class="font-semibold">Amount</label>
+                <input
+                  id="budget-amount-input"
+                  class="w-full outline-0 text-green text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  name="cash"
+                  type="number"
+                  placeholder="$350"
+                  required
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Amount -->
-          <div
-            class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="fill-green"
-              fill="currentColor"
-              width="32"
-            >
-              <path
-                d="M18.0049 6.99979H21.0049C21.5572 6.99979 22.0049 7.4475 22.0049 7.99979V19.9998C22.0049 20.5521 21.5572 20.9998 21.0049 20.9998H3.00488C2.4526 20.9998 2.00488 20.5521 2.00488 19.9998V3.99979C2.00488 3.4475 2.4526 2.99979 3.00488 2.99979H18.0049V6.99979ZM4.00488 8.99979V18.9998H20.0049V8.99979H4.00488ZM4.00488 4.99979V6.99979H16.0049V4.99979H4.00488ZM15.0049 12.9998H18.0049V14.9998H15.0049V12.9998Z"
-              ></path>
-            </svg>
-            <div class="w-full">
-              <label for="cash" class="font-semibold">Amount</label>
-              <input
-                class="w-full outline-0 text-green text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                name="cash"
-                type="number"
-                placeholder="$350"
-                required
-              />
-            </div>
-          </div>
-
-          <button class="primary-btn mt-space-lg">Create Budget</button>
+          <button id="create-budget-btn" class="primary-btn mt-auto">
+            Create Budget
+          </button>
         </div>
 
         <!-- Expense column -->
@@ -127,10 +146,10 @@
         >
           <h2 class="text-black-100 font-bold text-2xl">Add New Expense</h2>
 
-          <div class="flex gap-space-base">
+          <div class="flex flex-wrap">
             <!-- expense name & amount -->
             <div
-              class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
+              class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m w-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +176,7 @@
 
             <!-- Cash -->
             <div
-              class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m"
+              class="flex items-center rounded-2xl p-space-base gap-space-base mt-space-2xl shadow-shadow-m w-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -185,22 +204,20 @@
           <!-- Select -->
           <div>
             <select
-              id="select"
+              id="expense-select"
               class="bg-white-100 mt-space-2xl appearance-none focus:outline-border w-full p-space-base pr-8 rounded-2xl shadow-shadow-m font-semibold"
-            >
-              <option>Groceries</option>
-              <option>Personal</option>
-              <option>Transport</option>
-              <option>Entertainment</option>
-            </select>
+            ></select>
           </div>
           <button class="primary-btn mt-space-2xl">Add expense</button>
         </div>
       </div>
 
       <!-- Existing budgets -->
-      <div class="grid md:grid-cols-2 grid-cols-1 mt-space-2xl">
-        <div>
+      <div
+        id="existing-budget-container"
+        class="grid md:grid-cols-2 gap-space-base grid-cols-1 mt-space-2xl"
+      >
+        <!-- <div class="existing-budget-col">
           <h2 class="text-black-100 font-bold text-2xl">Existing Budget</h2>
           <div
             class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l mt-space-base"
@@ -232,7 +249,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>

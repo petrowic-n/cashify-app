@@ -9,11 +9,15 @@ const createAcc = () => {
   // Event listener for create account btn using event delegation
   createAccContainer.addEventListener("click", (e) => {
     const createAccBtn = e.target.closest("#create-acc-btn");
+    const name = createAccInput.value;
 
     if (!createAccBtn) return;
+    // hiding hero section & showing app container
     heroSection.classList.add("hidden");
     appContainer.classList.remove('hidden')
-    userName.textContent = createAccInput.value;
+
+    // adding name into app
+    userName.textContent = name.charAt(0).toUpperCase() + name.slice(1);
   });
 };
 
