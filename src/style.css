@@ -71,9 +71,6 @@ body {
   --breakpoint-2xl: 1536px;
 }
 
-.gradient {
-}
-
 /* container */
 @layer components {
   .container {
@@ -124,7 +121,18 @@ body {
   transition: all 0.3s ease;
 }
 
-.primary-btn:hover {
+.secondary-btn {
+  padding-inline: var(--space-base);
+  padding-block: 8px;
+  color: var(--color-white-50);
+  font-weight: 500;
+  background-color: var(--color-green);
+  border-radius: var(--space-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover, .secondary-btn:hover {
   box-shadow: var(--shadow-shadow-s);
   transform: scale(1.03);
 }
