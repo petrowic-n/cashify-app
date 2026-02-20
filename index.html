@@ -142,6 +142,7 @@
 
         <!-- Expense column -->
         <div
+          id="expense-container"
           class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l"
         >
           <h2 class="text-black-100 font-bold text-2xl">Add New Expense</h2>
@@ -165,6 +166,7 @@
               <div class="w-full">
                 <label for="card" class="font-semibold">Expense name</label>
                 <input
+                  id="expense-name-input"
                   class="w-full outline-0 text-blue text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   name="card"
                   type="text"
@@ -192,6 +194,7 @@
               <div class="w-full">
                 <label for="cash" class="font-semibold">Amount</label>
                 <input
+                  id="expense-amount-input"
                   class="w-full outline-0 text-green text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   name="cash"
                   type="number"
@@ -208,7 +211,9 @@
               class="bg-white-100 mt-space-2xl appearance-none focus:outline-border w-full p-space-base pr-8 rounded-2xl shadow-shadow-m font-semibold"
             ></select>
           </div>
-          <button class="primary-btn mt-space-2xl">Add expense</button>
+          <button id="expense-btn" class="primary-btn mt-space-2xl">
+            Add expense
+          </button>
         </div>
       </div>
 
@@ -216,41 +221,8 @@
       <div
         id="existing-budget-container"
         class="grid md:grid-cols-2 gap-space-base grid-cols-1 mt-space-2xl"
-      >
-        <!-- <div class="existing-budget-col">
-          <h2 class="text-black-100 font-bold text-2xl">Existing Budget</h2>
-          <div
-            class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l mt-space-base"
-          >
-            <div class="flex items-center justify-between">
-              <h3 class="font-semibold text-red-500 text-xl">Groceries</h3>
-              <div>
-                <span class="text-red-400 font-semibold text-xl"
-                  >$1,200.00
-                </span>
-                <span class="text-red-400">budgeted</span>
-              </div>
-            </div>
-            <div
-              class="w-full h-3 bg-red-200 rounded-full overflow-hidden mt-space-2xl"
-            >
-              <div
-                class="h-full w-0 bg-red-500 transition-all duration-300 ease-in"
-              ></div>
-            </div>
-            <div class="flex items-center justify-between mt-space-2xl">
-              <div>
-                <span class="text-red-400 font-semibold">$9.47</span>
-                <span class="text-red-400">spent</span>
-              </div>
-              <div>
-                <span class="font-semibold">$1000 </span>
-                <span>remaining</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
+      ></div>
+      <!-- existing budget end -->
     </div>
   </body>
 </html>

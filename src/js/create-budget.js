@@ -8,7 +8,7 @@ const createBudget = () => {
   const existingBudgetContainer = document.getElementById(
     "existing-budget-container",
   );
-  const expenseSelect = document.getElementById('expense-select')
+  const expenseSelect = document.getElementById("expense-select");
 
   createBudgetContainer.addEventListener("click", (e) => {
     const createBudgetBtn = e.target.closest("#create-budget-btn");
@@ -18,7 +18,7 @@ const createBudget = () => {
     if (!createBudgetBtn) return;
 
     // creating select option
-    const selectOption = `<option>${budgetName}</option>`
+    const selectOption = `<option>${budgetName}</option>`;
     expenseSelect.insertAdjacentHTML("beforeend", selectOption);
 
     // creating budget
@@ -28,11 +28,12 @@ const createBudget = () => {
           <div
             class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l mt-space-base"
           >
+          <div class="existing-budget-col-content">
             <div class="flex items-center justify-between">
               <h3 class="font-semibold text-red-500 text-xl">${budgetName}</h3>
               <div>
-                <span class="text-red-400 font-semibold text-xl"
-                  >$${new Intl.NumberFormat("en-US").format(Number(budgetAmount))}
+                <span class="existing-budget-amount text-red-400 font-semibold text-xl"
+                  >${new Intl.NumberFormat("en-US").format(Number(budgetAmount))}
                 </span>
                 <span class="text-red-400">budgeted</span>
               </div>
@@ -46,18 +47,23 @@ const createBudget = () => {
             </div>
             <div class="flex items-center justify-between mt-space-2xl">
               <div>
-                <span class="text-red-400 font-semibold">$9.47</span>
+                <span class="existing-budget-spent text-red-400 font-semibold"></span>
                 <span class="text-red-400">spent</span>
               </div>
               <div>
-                <span class="font-semibold">$1000 </span>
+                <span class="existing-budget-remaining font-semibold">$1000 </span>
                 <span>remaining</span>
               </div>
+            </div>
             </div>
           </div>
         </div>
     `;
     existingBudgetContainer.insertAdjacentHTML("beforeend", html);
+
+    
+
+    
   });
 };
 
