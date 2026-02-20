@@ -9,10 +9,10 @@
   </head>
   <body class="bg-white-50 text-muted min-h-screen">
     <!-- header -->
-    <header class="fixed w-full top-0 left-0 right-0 py-space-base">
+    <header class="fixed w-full top-0 left-0 right-0 py-space-base bg-white-100 shadow-shadow-s">
       <div class="container">
         <!-- logo -->
-        <div class="flex items-center gap-1.5">
+        <div class="flex items-center justify-center gap-1.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -30,7 +30,7 @@
     </header>
 
     <!-- hero section -->
-    <section class="pt-52">
+    <section id="hero-section" class="pt-52">
       <div class="container flex flex-col items-center justify-center">
         <h1 class="md:text-6xl text-5xl text-black-100 font-bold text-center">
           Take control of <br>
@@ -40,22 +40,24 @@
           Personal budgeting is the secret to financial freedom.
         </p>
         <p>Start your journey today.</p>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center form-create-acc">
           <input
+          id="input-create-acc"
             class="w-full max-w-75 border border-green p-space-s rounded-2xl outline-green text-green text-lg appearance-none [&::-webkit-inner-spin-button]:appearance-none mt-space-2xl shadow-shadow-s"
             name="card"
             type="text"
             placeholder="enter your name"
             required
           />
-          <button class="secondary-btn mt-space-2xl shadow-shadow-s">Create account</button>
+          <button id="create-acc-btn" class="secondary-btn mt-space-2xl shadow-shadow-s">Create account</button>
         </div>
       </div>
     </section>
 
     <!-- App -->
-    <div class="container hidden">
-      <div class="grid md:grid-cols-2 grid-cols-1 gap-space-base">
+    <div id="app" class="container hidden pt-52 pb-10">
+      <h2 class="text-black-100 font-bold text-2xl">Welcome <span id="user-name" class="text-blue font-semibold"></span></h2>
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-space-base mt-space-2xl">
         <!-- Budget column -->
         <div
           class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l"
