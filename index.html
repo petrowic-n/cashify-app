@@ -75,7 +75,7 @@
 
         <!-- Expense column -->
         <div
-          class=" p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l"
+          class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l"
         >
           <h2 class="text-black-100 font-bold text-2xl">Add New Expense</h2>
 
@@ -136,14 +136,55 @@
           </div>
           <!-- Select -->
           <div>
-            <select id="select" class="bg-white-100 mt-space-2xl appearance-none  focus:outline-border w-full  p-space-base pr-8 rounded-2xl shadow-shadow-m font-semibold">
-              <option >Groceries</option>
+            <select
+              id="select"
+              class="bg-white-100 mt-space-2xl appearance-none focus:outline-border w-full p-space-base pr-8 rounded-2xl shadow-shadow-m font-semibold"
+            >
+              <option>Groceries</option>
               <option>Personal</option>
               <option>Transport</option>
               <option>Entertainment</option>
             </select>
           </div>
           <button class="primary-btn mt-space-2xl">Add expense</button>
+        </div>
+      </div>
+
+      <!-- Existing budgets -->
+      <div class="grid md:grid-cols-2 grid-cols-1 mt-space-2xl">
+        <div>
+          <h2 class="text-black-100 font-bold text-2xl">Existing Budget</h2>
+          <div
+            class="p-space-2xl bg-white-100 rounded-2xl w-full shadow-shadow-l mt-space-base"
+          >
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold text-red-500 text-xl">Groceries</h3>
+              <div>
+                <span class="text-red-400 font-semibold text-xl"
+                  >$1,200.00
+                </span>
+                <span class="text-red-400">budgeted</span>
+              </div>
+            </div>
+            <div
+              class="w-full h-3 bg-red-200 rounded-full overflow-hidden mt-space-2xl"
+            >
+              <div
+                class="h-full w-0 bg-red-500 transition-all duration-300 ease-in"
+              ></div>
+            </div>
+            <div class="flex items-center justify-between mt-space-2xl">
+              <div>
+                <span class="text-red-400 font-semibold">$9.47</span>
+                <span class="text-red-400">spent</span>
+              </div>
+              <div>
+                <span class="font-semibold">$1000 </span>
+                <span>remaining</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
